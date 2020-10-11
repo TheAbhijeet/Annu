@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ChatBot</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        /*/////////////////////////////////*/
+        /*/////////  chat styles  /////////*/
+        /*/////////////////////////////////*/
+        .chat {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chat li {
+            margin-bottom: 40px;
+            padding-bottom: 5px;
+            /* border-bottom: 1px dotted #B3A9A9; */
+            margin-top: 10px;
+            width: 80%;
+        }
+
+
+        .chat li .chat-body p {
+            margin: 0;
+            /* color: #777777; */
+        }
+
+
+        .chat-care {
+            overflow-y: scroll;
+            height: 350px;
+        }
+
+        .chat-care .chat-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .chat-care .img-circle {
+            border-radius: 50%;
+        }
+
+        .chat-care .chat-img {
+            display: inline-block;
+        }
+
+        .chat-care .chat-body {
+            display: inline-block;
+            max-width: 80%;
+            background-color: #ebf4ff;
+            border-radius: 12.5px;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .chat-care .chat-body strong {
+            color: #43484e;
+        }
+
+        .chat-care .admin {
+            text-align: right;
+            float: right;
+        }
+
+        .chat-care .admin p {
+            text-align: left;
+        }
+
+        .chat-care .agent {
+            text-align: left;
+            float: left;
+        }
+
+        .chat-care .left {
+            float: left;
+        }
+
+        .chat-care .right {
+            float: right;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+
+
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #555;
+        }
+
+
+
+        .img-header {
+            position: relative;
+            margin-top: 0vw;
+            /* margin-right: 4vw; */
+            float: left;
+        }
+
+        .img {
+            width: auto;
+            height: 2.5em;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .online_p {
+            float: left;
+            text-transform: bold;
+            /* margin-top: 1vw; */
+            margin-right: 2vw;
+            display: inline;
+            font-size: 22px;
+        }
+
+        .online {
+            width: 1.5vw;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 mx-auto">
+                <div class="card">
+
+                    <div class="card-header ">
+                        <!-- <span>Annu</span><span class="dot"></span> -->
+                        <div class="img-header">
+                            <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg">
+                            <img class="online"
+                                src="http://www.clker.com/cliparts/e/E/F/G/p/g/alex-green-circle-md.png">
+                        </div>
+                        <p class="online_p">Annu</p>
+                    </div>
+                    <div id="messages" class="card-body chat-care">
+                        <ul class="chat" id="the_ul">
+                            <li class="agent clearfix">
+                                <span class="chat-img left clearfix mx-2">
+                                    <img src="http://placehold.it/50/55C1E7/fff&text=A" alt="Agent"
+                                        class="img-circle" />
+                                </span>
+                                <div class="chat-body clearfix">
+                                    <!-- <div class="header clearfix">
+                                        <strong class="primary-font">Annu</strong>
+                                    </div> -->
+                                    <p>
+                                        Hey there!!
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- <li class="admin clearfix">
+                                <span class="chat-img right clearfix  mx-2">
+                                    <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="Admin" class="img-circle" />
+                                </span>
+                                <div class="chat-body clearfix">
+                                 
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                        dolor, quis ullamcorper ligula sodales.
+                                    </p>
+                                </div>
+                            </li> -->
+
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <input id="text_input" type="text" class="form-control input-sm"
+                                placeholder="Type your message here..." />
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" id="send_text">
+                                    Send</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("#send_text").click(function () {
+                var value = $("#text_input").val();
+                console.log(value);
+                $('').append('')
+                $("#text_input").val('');
+                $("#the_ul").append('<li class="admin clearfix">' +
+                    '<span class="chat-img right clearfix  mx-2"><img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="Admin" class="img-circle" /></span>' +
+                    '<div class="chat-body clearfix">' +
+
+                    '<p>' + value + '</p>  ' +
+
+                    '</div> </li>')
+                var arr = { 'text': value };
+                //    ajax call
+                $.ajax({
+                    data: JSON.stringify(arr), // get the form data
+                    type: 'POST', // GET or POST
+                    url: "{% url 'chat-api' %}",
+                    // on success
+                    success: function (response) {
+                        $("#the_ul").append('<li class="agent clearfix">' +
+                            '<span class="chat-img left clearfix mx-2"> <img src="http://placehold.it/50/55C1E7/fff&text=A" alt="Agent" class="img-circle" /></span>' +
+                            '<div class="chat-body clearfix">' +
+
+                            '<p>' + response.text + '</p>  ' +
+
+                            '</div> </li>')
+                        var div = document.getElementById("messages");
+                        div.scrollTop = div.scrollHeight - div.clientHeight;
+
+                    },
+                    // on error
+                    error: function (response) {
+                        // alert the error if any error occured
+                        console.log(response)
+                    }
+                });
+                return false;
+            });
+            $('#text_input').keypress(function (e) {
+                if (e.which == 13) {//Enter key pressed
+                    $('#send_text').click();//Trigger search button click event
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
