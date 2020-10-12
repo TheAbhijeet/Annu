@@ -31,7 +31,7 @@ PyYAML==3.13
 regex==2020.10.11
 requests==2.24.0
 six==1.15.0
-spacy==2.1.9
+spacy==2.3.2
 SQLAlchemy==1.2.19
 sqlparse==0.4.1
 srsly==1.0.2
