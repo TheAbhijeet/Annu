@@ -1,12 +1,11 @@
 asgiref==3.2.10
 astroid==2.4.2
-autopep8==1.5.4
 blis==0.4.1
 catalogue==1.0.0
 certifi==2020.6.20
 chardet==3.0.4
-ChatterBot==1.0.5
-chatterbot-corpus==1.2.0
+#ChatterBot==1.0.5
+#chatterbot-corpus==1.2.0
 click==7.1.2
 cymem==2.0.3
 Django==2.2
@@ -24,7 +23,6 @@ Pint==0.16.1
 plac==0.9.6
 preshed==3.0.2
 pycodestyle==2.6.0
-pylint==2.6.0
 pymongo==3.11.0
 pyparsing==2.4.7
 python-dateutil==2.7.5
@@ -33,7 +31,7 @@ PyYAML==5.1.2
 regex==2020.9.27
 requests==2.24.0
 six==1.15.0
-spacy==2.3.2
+#spacy==2.3.2
 SQLAlchemy==1.2.19
 sqlparse==0.4.1
 srsly==1.0.2
