@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from bot.views import ChatterBotApiView, index
+from bot.views import ChatterBotApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ChatterBotApiView.as_view(), name='chat-api'),
-    path('test', index),
 
 ]

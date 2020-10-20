@@ -17,7 +17,6 @@ class ChatterBotApiView(View):
     Provide an API endpoint to interact with ChatterBot.
     """
 
-    # chatterbot = chatbot
     chatterbot = ChatBot(**settings.CHATTERBOT)
     corpus_trainer = ChatterBotCorpusTrainer(chatterbot)
     corpus_trainer.train("chatterbot.corpus.english")
@@ -38,10 +37,6 @@ class ChatterBotApiView(View):
         "See yaa",
         "I love you",
         "I wish I could leave you my love but my heart, is a mess!",
-        "I hate you",
-        "Lol! I konsa love you?",
-        "fuck you",
-        "Chup madrchod! &#129323;",
         "yes",
         "Huh? &#128529",
         "who made you?",
@@ -67,8 +62,4 @@ class ChatterBotApiView(View):
         """
         Return data corresponding to the current conversation.
         """
-        return render(request, 'new-index.html')
-
-
-def index(request):
-    return render(request, 'new-index.html')
+        return render(request, 'index.html')
